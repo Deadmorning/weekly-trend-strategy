@@ -1,0 +1,23 @@
+{
+  "skill_name": "strategy-framework",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "我想写一个策略：每当A股宽基ETF的成交量超过过去20日均量的1.5倍时，第二天开盘买入，持有5天后卖出。你觉得这个策略值得测试吗？",
+      "expected_output": "Should identify structural impossibility: volume is directionless. High volume could be panic selling or accumulation. Should STOP at Layer 4 and NOT recommend testing.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "想做一个双均线策略：5日均线上穿20日均线买入，下穿卖出，用在沪深300ETF上。帮我评估一下这个策略的可行性。",
+      "expected_output": "Should identify Type B/A behavioral bias, note it's a valid mechanism (price momentum/herding), define failure conditions (ranging market), recommend minimum implementation with Walk-Forward validation.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "历史数据显示当市场3年滚动收益率超过历史均值2个标准差时，后续12个月收益往往低于均值。我能用这个写一个减仓策略吗？",
+      "expected_output": "Should identify Type C (overreaction) mechanism at macro level, classify as Behavioral Alpha (durable), define failure conditions, note the timing uncertainty (markets can stay overextended), recommend gradual scaling not binary on/off.",
+      "files": []
+    }
+  ]
+}
